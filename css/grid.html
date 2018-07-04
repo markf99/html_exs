@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grid</title>
+	<style>
+		.grid_divisions{
+			display: grid;
+			grid-template-columns: auto auto auto auto auto;
+			grid-gap: 1px;
+			background-color: #ffff66;
+			padding:2px;
+		}
+		.grid_divisions > div{
+			background-color: #ff9999;
+			border:1px solid black;
+			text-align: center;
+
+		}
+		.grid_elem_2{
+			grid-column-start: 2;
+			grid-column-end:4;
+			text-align: center;
+		}
+		.grid_elem_5{
+			position: center;
+			grid-row-start: 2;
+			grid-row-end: 5;
+			text-align: center;
+		}
+		.grid_elem_18{
+			grid-column-start:1;
+			grid-column-end:6;
+			text-align: center;
+		}
+		.grid_elem_20{
+			grid-row-start:7;
+			grid-row-end: 9;
+			text-align: center;
+		}
+		.grid_elem_21{
+			grid-row-start:6;
+			grid-row-end: 8;
+			text-align: center;
+		}
+		.grid_elem_22{
+			grid-column-start:3;
+			grid-column-end:5;
+			text-align: center;
+		}
+		.grid_elem_25{
+			grid-column-start:4;
+			grid-column-end:6;
+			text-align: center;
+		}
+		.grid_elem_26{
+			grid-column-start:2;
+			grid-column-end:5;
+			grid-row-start:8;
+			grid-row-end: 10;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="grid_divisions">
+		<div class="grid_elem_1"><h3>Degree</h3></div>
+		<div class="grid_elem_2"><h3>Student</h3></div>
+		<div class="grid_elem_3"><h3>Age</h3></div>
+		<div class="grid_elem_4"><h3>Course</h3></div>
+		<div class="grid_elem_5">Computer science</div>
+		<div class="grid_elem_6">Pablo</div>
+		<div class="grid_elem_7">Miki</div>
+		<div class="grid_elem_8">19</div>
+		<div class="grid_elem_9">4t</div>
+		<div class="grid_elem_0">Pau</div>
+		<div class="grid_elem_11">Pol</div>
+		<div class="grid_elem_12">90</div>
+		<div class="grid_elem_13">???</div>
+		<div class="grid_elem_14">Jey</div>
+		<div class="grid_elem_15">Hey</div>
+		<div class="grid_elem_16">56</div>
+		<div class="grid_elem_17">!!!</div>
+		<div class="grid_elem_18">Random item</div>
+		<div class="grid_elem_19">A</div>
+		<div class="grid_elem_20">B</div>
+		<div class="grid_elem_21">C</div>
+		<div class="grid_elem_22">E</div>
+		<div class="grid_elem_23">A</div>
+		<div class="grid_elem_24">B</div>
+		<div class="grid_elem_25">D</div>
+		<div class="grid_elem_26">26</div>
+		<div class="grid_elem_27">27</div>
+		<div class="grid_elem_28">28</div>
+		<div class="grid_elem_29">29</div>
+	</div>
+</body>
+</html>

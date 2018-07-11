@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carrousel</title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">		
+		var imgActual = 0;
+		var positions; 
+		function init(){
+			positions = document.getElementsByTagName('img');
+			for (var i = positions.length - 1; i >= 0; i--) {				
+				positions[i].style.display="none";
+			}
+			positions[imgActual].style.display = "block";
+			setInterval(image_slide,2500);	
+		} 
+
+		function image_slide() {
+			positions[imgActual].style.display="none";
+			imgActual++;
+			if(imgActual > positions.length-1) imgActual = 0;
+			positions[imgActual].style.display="block";
+		}
+		window.onload=init;
+	</script>
+</head>
+<body>
+	<div id="Carrousel">
+		<img id="blue" src="blue.png">
+		<img id="red" src="red.png">
+		<img id="green" src="green.png">
+	</div>
+</body>
+</html>

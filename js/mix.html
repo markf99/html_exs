@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mix</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		header{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		#watch{
+			justify-content: flex-end;
+			z-index:1;
+		}
+		#footer{
+			height: 300px;
+			background-color: blue;
+		}
+		#textarea{
+			height: 350px;
+			border: 2px solid black;
+			width: 100%;
+		}
+	</style>
+	<script type="text/javascript">
+		var imgActual = 0;
+		var positions; 
+		function init(){
+			positions = document.getElementsByTagName('img');
+			for (var i = positions.length - 1; i >= 0; i--) {				
+				positions[i].style.display="none";
+			}
+			positions[imgActual].style.display = "block";
+			setInterval(image_slide,1500);	
+		} 
+
+		function image_slide() {
+			positions[imgActual].style.display="none";
+			imgActual++;
+			if(imgActual > positions.length-1) imgActual = 0;
+			positions[imgActual].style.display="block";
+		}
+		function watch(){
+			var today = new Date();
+			var h=today.getHours();
+			var m=today.getMinutes();
+			var s=today.getSeconds();
+			m=zero(m);
+			s=zero(s);
+			document.getElementById('watch').innerText=h+":"+m+":"+s;
+		}
+		var t = setInterval(watch, 1000);
+		function zero(i){
+			if(i<10){i="0"+i}
+				return i;
+		}
+		function all() {
+			t();
+			watch();
+			init();
+		}
+		window.onload=all;
+	</script>
+</head>
+<body>
+	<header>
+		<div id="carrusel">
+			<img id="blue" src="blue.png">
+			<img id="red" src="red.png">
+			<img id="green" src="green.png">
+		</div>
+		<div id="watch"></div>
+	</header>
+	<main >
+		<textarea id=textarea placeholder="Write something:"></textarea>
+		
+	</main>
+	<footer id="footer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</footer>
+</body>
+</html>

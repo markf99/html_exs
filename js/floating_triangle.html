@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>triangle</title>
+	<script type="text/javascript">
+		var x0 = 25;
+		var y0 = 0;
+		var x1 = 55;
+		var y1 = 55;
+		var x2 = 75;
+		var y2 = 0;
+		var ctx;
+		var freq;
+		function clear{
+			ctx.cleartriangle();
+		}
+		function triangle {
+			ctx.beginPath();
+			ctx.triangle(x0,y0,x1,y1,x2,y2);
+			ctx.fillStyle ="red";
+			ctx.fill();
+		}
+		function ini() {
+			ctx.document.getElementById('triangle').getContext("2d");
+			freq = setInterval(triangle(),1000);
+		}
+		window.onload ="ini";
+	</script>
+</head>
+<body>
+	<div class=triangle></div>
+</body>
+</html>

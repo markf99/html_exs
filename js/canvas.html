@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>first canvas</title>
+	<script type="text/javascript">
+		var positions = [{x:150, y:150, dx:2, dy:2}]
+		var x=150;
+		var y=150;
+		var dx=2;
+		var dy=2;
+		var height=300;
+		var width=300;
+		var ctx;
+		var r=25;
+		var interval;
+
+		function circle (){
+			ctx = document.getElementById('container').getContext('2d');
+			interval=setInterval(draw,10);
+		}
+		function clear() {
+			ctx.clearRect(0,0,width,height);
+		}
+		function drawball(color){
+			ctx.beginPath();
+			ctx.arc(x,y,r,0,Math.PI*2,true);
+			var aux=Math.floor(Math.random()*width)+1
+			positions[1]={x:aux; y:aux};
+		}
+		function draw() {
+			clear();
+			var newx = positions[0].x;
+			var newy = positions[0].y;
+			var newdx = positions[0].dx;
+			var newdy = positions[0].dy;
+			if(x +r +dx> width ||x- r-10+dx<0){
+				dx=-dx;
+			}
+			if (y+r+dy>height ||y-r+dy<0){
+				dy=-dy
+			}
+			x += dx;
+			y += dy;
+			ctx.beginPath();
+			ctx.arc(x,y,r,0,Math.PI*2,true);
+			ctx.fillStyle = "red";
+			ctx.fill();
+		}
+		window.onload=circle;
+	</script>
+	<style type="text/css">
+		#container{
+			position: relative;
+			border: 2px solid black;
+		}
+
+	</style>
+</head>
+<body>
+<canvas id=container width="300" height="300"></canvas>
+</body>
+</html>

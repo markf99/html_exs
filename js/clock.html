@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>clock</title>
+	<script type="text/javascript">
+		var myvar = setInterval(dates,1000);
+		function dates() {
+			var d = new Date();
+			d.setHours(0);
+			d.setMinutes(0);
+			d.setSeconds(0);
+			document.getElementById('timer').innerHTML=d;
+		}
+	</script>
+</head>
+<body  onload="dates()">
+	<p id="timer"></p>
+</body>
+</html>
